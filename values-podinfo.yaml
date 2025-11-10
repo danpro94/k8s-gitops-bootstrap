@@ -1,0 +1,10 @@
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: Prefix
+service:
+  type: ClusterIP
