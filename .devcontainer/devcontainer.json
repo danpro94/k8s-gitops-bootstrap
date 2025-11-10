@@ -1,0 +1,11 @@
+{
+	"name": "k8s-gitops",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+"postCreateCommand": "bash .devcontainer/setup.sh",
+"remoteUser": "vscode",
+"mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"]
+}
