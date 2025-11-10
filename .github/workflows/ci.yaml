@@ -28,7 +28,7 @@ jobs:
       - name: Build & push image
         run: |
           docker build -t ghcr.io/${{ github.repository }}/web:${GIT_SHA} app
-          docker push.io/${{ github.repository }}/web:${GIT_SHA}
+          docker push ghcr.io/${{ github.repository }}/web:${GIT_SHA}
 
       - name: Install trivy
         uses: aquasecurity/trivy-action@0.24.0
