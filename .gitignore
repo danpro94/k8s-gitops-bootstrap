@@ -1,0 +1,38 @@
+# OS/IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
+
+
+# Node/Python (도구 스크립트 사용)
+node_modules/
+*.log
+__pycache__/
+*.pyc
+
+
+# Docker/Build
+.dist/
+.build/
+.Dockerfile.*.tmp
+
+
+# Helm/K8s
+charts/*/charts/
+charts/*/tmp/
+*.tgz
+# 민감 파일 금지
+.env
+*.env
+*.secret*
+secrets/*.yaml
+kubeconfig
+.kube/
+
+
+# Images (대용량 원본은 외부 스토리지)
+*.psd
+*.ai
+*.xcf
