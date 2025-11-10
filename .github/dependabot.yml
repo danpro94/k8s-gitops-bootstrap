@@ -1,0 +1,30 @@
+version: 2
+updates:
+  #1. GitHub Actions 워크플로(보안 취약점에 민감함)
+  - package-ecosystem: "github-actions" # See documentation for possible values
+    directory: "/" # 프로젝트 루트(모든 workflows)
+    schedule:
+      interval: "daily" # 권장 daily, 최소 weekly
+
+   #2. Docker 이미지(컨테이너 환경에서 중요)
+    - package-ecosystem: "docker"
+      directory: "/" # Dockerfile 위치
+      schedule:
+        interval: "weekly"
+
+    #3. Helm Chart (k8s 앱 배포에 사용 시)
+    - package-ecosystem: "helm"
+      schedule:
+        interval: "monthly"
+
+    #4. Python(pip) - ex) ML, 관리툴, 스크립트 등 사용한 경우
+    - package-ecosystem: "pip"
+      directory: "/" # requirements.txt 위치
+      schedule:
+        interval: "weekly"
+
+    #5. Node.js(npm) - ex) 대시보드, UI 등
+    - package-ecosystem: "npm" # See documentation for possible values
+      directory: "/" # package.json 위치
+      schedule:
+        interval: "weekly"
