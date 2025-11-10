@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
   id-token: write
-  packages: writw
+  packages: write
 
 jobs:
   build-scan-push:
