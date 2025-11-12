@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-set -euo pipfail
+set -euo pipefail
 k3d cluster delete dev || true
