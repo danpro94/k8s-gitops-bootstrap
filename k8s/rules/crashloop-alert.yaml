@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: kps-crashloop-alert
+  namespace: observability
+  labels:
+    release: kps
+spec:
+  groups:
+  - name: k8s-runtime.rules
+    rules:
+    - alert: PodCrashLooping
+      expr: |
+        increase(kube_pod_container_status_restarts_total[5m]) > 3
+      for: 2m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Pod {{ $labels.pod }} is crashing frequently"
+        description: "Container {{ $labels.container }} in pod {{ $labels.pod }} restarted >3 times in 5m."
