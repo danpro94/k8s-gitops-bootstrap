@@ -15,3 +15,8 @@
 - CI(샘플): GitHub Actions — 컨테이너 Build → Scan(Trivy) → SBOM
 - (예정) GitOps: Argo CD(App of Apps) 로 infra/ · apps/ 분리 배포
 
+## Observability & Alerting (Day4)
+- **Grafana** : Nodes/Pods 대시보드 improt -> 자원/헬스체크 모니터링
+- **Alert** : 'PodCrashLooping' 룰 운영
+    - Rule: `increase(kube_pod_container_status+total[5m]) > 3 for 2m`
+    - 목적: 비정상 Pod 재시작 및 빠른 감지

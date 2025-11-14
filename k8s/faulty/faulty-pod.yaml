@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: faulty
+  namespace: demo
+spec:
+  restartPolicy: Always
+  containers:
+  - name: bad
+    image: busybox:1.36
+    command: ["sh", "-c", "echo 'boom'; exit 1"]
