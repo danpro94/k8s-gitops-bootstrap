@@ -1,0 +1,10 @@
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: Prefix
+service:
+  type: ClusterIP
