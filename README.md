@@ -1,6 +1,7 @@
 # README
 ## k8s-gitops-bootstrap
 
+![ci](https://github.com/<OWNER>/<REPO>/actions/workflows/ci.yaml/badge.svg)
 [![License](https://img.shields.io/badge/license-Unlicense-blue.svg)](LICENSE)
 
 > **WSL2 + k3d + Helm 기반 로컬 Kubernetes 부트스트랩, 30분 내 재현 가능**
